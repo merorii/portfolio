@@ -1,0 +1,148 @@
+
+
+/* html {
+    --color-texta: #1d1d1d;
+    --color-textb: #fff;
+} */
+
+body{
+    cursor:none;
+    width:100%;
+    height:100%;
+    margin:0;
+    padding:0
+}
+
+.cursor {
+    width: 1rem;
+    height: 1rem;
+    background: rgba(0,0,0,0.1);
+    border-radius: 50%;
+    position: fixed;
+    z-index: 10;
+    transform: translate(-50%, -50%);
+    pointer-events: none;
+    transition: transform 0.3s ease, background-color 0.3s ease;
+}
+
+.cursor-grow {
+    transform: scale(5);
+}
+
+header{
+    position: fixed;
+    width: 100%;
+    box-shadow: 2px 2px 3px 3px rgba(0,0,0,0.1);
+    z-index: 5;
+    padding: 0 1rem;
+    background: rgba(255,255,255,0.1);
+    backdrop-filter: saturate(180%) blur(15px);
+}
+
+.header_wrapper{
+    max-width: 1000px;
+    margin: 0 auto;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+h1{
+}
+
+nav.gnb{
+    width: 40vw
+}
+
+.gnb ul{
+    display: flex;
+    justify-content: space-around;
+    height:4rem;
+    line-height: 4rem;
+}
+
+.gnb li{
+    text-align: center;
+    color:#222;
+}
+
+.footer{
+    width: 100%;
+    height: 10vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+}
+
+.main-message{
+    opacity: 0;
+}
+
+.sticky-message{
+    position:fixed;
+    top:50%;
+    left:50%;
+    transform: translate(-50%, -50%);
+    text-align: center;
+    display: none;
+}
+
+.scroll-section{
+    position: relative;
+    padding-top: 50vh;
+    text-align: center;
+}
+
+#scroll-section1 .icon0{
+    left: 10%;
+    top: 15%
+}
+#scroll-section1 .icon1{
+    left: 60%;
+    top: 13%
+}
+#scroll-section1 .icon2{
+    left: 90%;
+    top: 20%
+}
+#scroll-section1 .icon3{
+    left: 15%;
+    top: 45%
+}
+#scroll-section1 .icon4{
+    left: 40%;
+    top: 40%
+}
+#scroll-section1 .icon5{
+    left: 65%;
+    top: 50%
+}
+#scroll-section1 .icon6{
+    left: 80%;
+    top: 60%
+}
+#scroll-section1 .icon7{
+    left: 8%;
+    top: 80%
+}
+#scroll-section1 .icon8{
+    left: 25%;
+    top: 70%
+}
+#scroll-section1 .icon9{
+    left: 60%;
+    top: 80%
+}
+#scroll-section1 .icon10{
+    left: 85%;
+    top: 80%
+}
+
+#scene0 #scroll-section0 .sticky-message,
+#scene1 #scroll-section1 .sticky-message,
+#scene2 #scroll-section2 .sticky-message,
+#scene3 #scroll-section3 .sticky-message,
+#scene4 #scroll-section4 .sticky-message{
+    display: block;
+}
