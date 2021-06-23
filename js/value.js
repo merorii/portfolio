@@ -4,9 +4,9 @@ const scenes = [
         scrollHeight: 0,
         objs: {
             container: document.querySelector('#scroll-section0'),
-            messageA: document.querySelector('#scroll-section0 .main-message.messageA'),
-            messageB: document.querySelector('#scroll-section0 .main-message.messageB'),
-            messageC: document.querySelector('#scroll-section0 .main-message.messageC'),
+            messageA: document.querySelector('#scroll-section0 .animation.messageA'),
+            messageB: document.querySelector('#scroll-section0 .animation.messageB'),
+            messageC: document.querySelector('#scroll-section0 .animation.messageC'),
         },
         values: {
             messageA_op_in: [0, 1, { start: 0.25, end: 0.3 }],
@@ -22,22 +22,20 @@ const scenes = [
         scrollHeight: 0,
         objs: {
             container: document.querySelector('#scroll-section1'),
-            messageA: document.querySelector('#scroll-section1 .main-message.messageA'),
-            icon0: document.querySelector('#scroll-section1 .main-message.icon0'),
-            icon1: document.querySelector('#scroll-section1 .main-message.icon1'),
-            icon2: document.querySelector('#scroll-section1 .main-message.icon2'),
-            icon3: document.querySelector('#scroll-section1 .main-message.icon3'),
-            icon4: document.querySelector('#scroll-section1 .main-message.icon4'),
-            icon5: document.querySelector('#scroll-section1 .main-message.icon5'),
-            icon6: document.querySelector('#scroll-section1 .main-message.icon6'),
-            icon7: document.querySelector('#scroll-section1 .main-message.icon7'),
-            icon8: document.querySelector('#scroll-section1 .main-message.icon8'),
-            icon9: document.querySelector('#scroll-section1 .main-message.icon9'),
-            icon10: document.querySelector('#scroll-section1 .main-message.icon10'),
+            iconWrapper: document.querySelector('#scroll-section1 .icon-wrapper'),
+            icon0: document.querySelector('#scroll-section1 .icon0'),
+            icon1: document.querySelector('#scroll-section1 .icon1'),
+            icon2: document.querySelector('#scroll-section1 .icon2'),
+            icon3: document.querySelector('#scroll-section1 .icon3'),
+            icon4: document.querySelector('#scroll-section1 .icon4'),
+            icon5: document.querySelector('#scroll-section1 .icon5'),
+            icon6: document.querySelector('#scroll-section1 .icon6'),
+            icon7: document.querySelector('#scroll-section1 .icon7'),
+            icon8: document.querySelector('#scroll-section1 .icon8'),
+            icon9: document.querySelector('#scroll-section1 .icon9'),
+            icon10: document.querySelector('#scroll-section1 .icon10'),
         },
         values: {
-            messageA_op_in: [0, 1, { start: 0.05, end: 0.1 }],
-            messageA_op_out: [1, 0, { start: 0.15, end: 0.2 }],
             icon0_op: [0, 1, { start: 0.1, end: 0.2 }],
             icon1_op: [0, 1, { start: 0.2, end: 0.3 }],
             icon2_op: [0, 1, { start: 0.3, end: 0.4 }],
@@ -49,13 +47,11 @@ const scenes = [
             icon8_op: [0, 1, { start: 0.9, end: 1 }],
             icon9_op: [0, 1, { start: 0.1, end: 0.2 }],
             icon10_op: [0, 1, { start: 0.1, end: 0.2 }],
-            icon_op: [0, 1],
-            icon_translateY: [50, 0],
-            icon_out: [1, 0, { start: 0.9, end: 1 }]
+            icon_translateY: [50, 0]
         }
     },
     {
-        heightNum: 5,   //sticky
+        heightNum: 2,   //normal
         scrollHeight: 0,
         objs: {
             container: document.querySelector('#scroll-section2')

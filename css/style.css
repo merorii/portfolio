@@ -1,22 +1,15 @@
-
-
-/* html {
-    --color-texta: #1d1d1d;
-    --color-textb: #fff;
-} */
-
-body{
-    cursor:none;
-    width:100%;
-    height:100%;
-    margin:0;
-    padding:0
+body {
+    cursor: none;
+    width: 100%;
+    height: 100%;
+    margin: 0;
+    padding: 0;
 }
 
 .cursor {
     width: 1rem;
     height: 1rem;
-    background: rgba(0,0,0,0.1);
+    background: rgba(0, 0, 0, 0.1);
     border-radius: 50%;
     position: fixed;
     z-index: 10;
@@ -29,120 +22,182 @@ body{
     transform: scale(5);
 }
 
-header{
+header {
     position: fixed;
     width: 100%;
-    box-shadow: 2px 2px 3px 3px rgba(0,0,0,0.1);
-    z-index: 5;
+    box-shadow: 2px 2px 3px 3px rgba(0, 0, 0, 0.1);
+    z-index: 9;
     padding: 0 1rem;
-    background: rgba(255,255,255,0.1);
+    background: rgba(255, 255, 255, 0.1);
     backdrop-filter: saturate(180%) blur(15px);
 }
 
-.header_wrapper{
-    max-width: 1000px;
+.header_wrapper {
+    max-width: 1100px;
     margin: 0 auto;
     display: flex;
     justify-content: space-between;
     align-items: center;
 }
 
-h1{
+h2 {
+    font-size: 8vw;
 }
 
-nav.gnb{
-    width: 40vw
+#scroll-section0 > div {
+    font-size: 4vw;
 }
 
-.gnb ul{
+nav.gnb {
+    width: 40vw;
+}
+
+.gnb ul {
     display: flex;
     justify-content: space-around;
-    height:4rem;
+    height: 4rem;
     line-height: 4rem;
 }
 
-.gnb li{
+.gnb li {
     text-align: center;
-    color:#222;
+    color: #222;
 }
 
-.footer{
+.footer {
     width: 100%;
     height: 10vh;
     display: flex;
     justify-content: center;
     align-items: center;
-
 }
 
-.main-message{
+.animation {
     opacity: 0;
 }
 
-.sticky-message{
-    position:fixed;
-    top:50%;
-    left:50%;
+.sticky {
+    position: fixed;
+    top: 50%;
+    left: 50%;
     transform: translate(-50%, -50%);
     text-align: center;
     display: none;
 }
 
-.scroll-section{
+.scroll-section {
     position: relative;
-    padding-top: 50vh;
     text-align: center;
 }
+#scroll-section0 {
+    padding-top: 50vh;
+}
+#scroll-section2 {
+    padding-top: 20vh;
+}
+#scroll-section1 .animation {
+    transform: translateY(0);
+    transition: all 0.2s;
+    z-index: 1;
+    position: absolute;
+}
 
-#scroll-section1 .icon0{
+.icon-wrapper {
+    position: absolute;
+    width: 100%;
+    height: 0;
+    bottom: 3%;
+}
+
+.icon-wrapper.sticky {
+    position: fixed;
+}
+
+#scroll-section1 .icon0 {
     left: 10%;
-    top: 15%
+    top: 15%;
 }
-#scroll-section1 .icon1{
+#scroll-section1 .icon1 {
     left: 60%;
-    top: 13%
+    top: 13%;
 }
-#scroll-section1 .icon2{
+#scroll-section1 .icon2 {
     left: 90%;
-    top: 20%
+    top: 20%;
 }
-#scroll-section1 .icon3{
+#scroll-section1 .icon3 {
     left: 15%;
-    top: 45%
+    top: 45%;
 }
-#scroll-section1 .icon4{
+#scroll-section1 .icon4 {
     left: 40%;
-    top: 40%
+    top: 40%;
 }
-#scroll-section1 .icon5{
+#scroll-section1 .icon5 {
     left: 65%;
-    top: 50%
+    top: 50%;
 }
-#scroll-section1 .icon6{
+#scroll-section1 .icon6 {
     left: 80%;
-    top: 60%
+    top: 60%;
 }
-#scroll-section1 .icon7{
+#scroll-section1 .icon7 {
     left: 8%;
-    top: 80%
+    top: 80%;
 }
-#scroll-section1 .icon8{
+#scroll-section1 .icon8 {
     left: 25%;
-    top: 70%
+    top: 70%;
 }
-#scroll-section1 .icon9{
+#scroll-section1 .icon9 {
     left: 60%;
-    top: 80%
+    top: 80%;
 }
-#scroll-section1 .icon10{
+#scroll-section1 .icon10 {
     left: 85%;
-    top: 80%
+    top: 80%;
 }
 
-#scene0 #scroll-section0 .sticky-message,
-#scene1 #scroll-section1 .sticky-message,
-#scene2 #scroll-section2 .sticky-message,
-#scene3 #scroll-section3 .sticky-message,
-#scene4 #scroll-section4 .sticky-message{
+.box-wrapper {
+    max-width: 1100px;
+    margin: 0 auto;
+    text-align: center;
+    font-size: 0;
+}
+
+.box-wrapper > div {
+    position: relative;
+    display: inline-block;
+    z-index: 2;
+    background: #eee;
+    width: 20rem;
+    height: 20rem;
+    margin: 0.3rem;
+    font-size: 15px;
+    transform: translate3d(0, 0, 0);
+    transition: all 0.2s;
+    box-shadow: 2px 2px 5px 2px rgba(0, 0, 0, 0.1);
+}
+
+#scene0 #scroll-section0 .sticky,
+#scene1 #scroll-section1 .sticky,
+#scene3 #scroll-section3 .sticky {
     display: block;
+}
+
+@media (max-width: 720px) {
+    h2 {
+        font-size: 4rem;
+    }
+    #scroll-section0 > div {
+        font-size: 2.5rem;
+    }
+    #scroll-section2 {
+        padding-top: 10vh;
+    }
+    .box-wrapper > div {
+        width: 90%;
+        height: 20rem;
+        margin: 1rem auto;
+    }
 }

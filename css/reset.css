@@ -1,19 +1,24 @@
-*{
-    padding:0;
-    margin:0;
+* {
+    padding: 0;
+    margin: 0;
     box-sizing: border-box;
 }
 
-ul,li{
+ul,
+li {
     list-style: none;
 }
 
-a{
+a {
     text-decoration: none;
-    color:inherit;
-    cursor:none;
+    color: inherit;
+    cursor: none;
 }
 
-html{
+html {
     scroll-behavior: smooth;
+}
+
+.d-none {
+    display: none;
 }

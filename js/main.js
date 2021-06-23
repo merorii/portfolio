@@ -3,24 +3,46 @@
     let currentScene = 0;
     let prevScrollHeight = 0;
 
-    let mouseCursor = document.querySelector(".cursor");
-    let cursorEffects = document.querySelectorAll(".cursorEffect");
+    const mouseCursor = document.querySelector(".cursor");
+    const cursorEffects = document.querySelectorAll(".cursorEffect");
+    const icons = document.querySelectorAll(".icon");
+    const boxs = document.querySelectorAll("#scroll-section2 .box-wrapper>div");
 
     window.addEventListener("mousemove", cursor);
     function cursor(e) {
         mouseCursor.style.left = e.clientX + "px";
         mouseCursor.style.top = e.clientY + "px";
     }
-    function mouseEffect(obj) {
-        obj.addEventListener("mouseover", () => {
+    cursorEffects.forEach((link) => {
+        link.addEventListener("mouseover", () => {
             mouseCursor.classList.add("cursor-grow");
         });
-        obj.addEventListener("mouseleave", () => {
+        link.addEventListener("mouseleave", () => {
             mouseCursor.classList.remove("cursor-grow");
         });
-    }
-    cursorEffects.forEach((link) => {
-        mouseEffect(link);
+    });
+    icons.forEach((icon) => {
+        icon.addEventListener("mouseover", (e) => {
+            e.target.style.transform = `translate3d(0, -30%, 0)`;
+        });
+        icon.addEventListener("mouseleave", (e) => {
+            e.target.style.transform = `translate3d(0, 0%, 0)`;
+        });
+    });
+    boxs.forEach((box) => {
+        box.addEventListener("mouseover", (e) => {
+            e.target.style.transform = `translate3d(0, -3%, 10px)`;
+            boxs.forEach((boxx) => {
+                boxx.style.opacity = 0.6;
+            });
+            e.target.style.opacity = 1;
+        });
+        box.addEventListener("mouseleave", (e) => {
+            e.target.style.transform = `translate3d(0, 0%, 0)`;
+            boxs.forEach((boxx) => {
+                boxx.style.opacity = 1;
+            });
+        });
     });
 
     function setCurrentScene() {
@@ -38,7 +60,6 @@
                 break;
             }
         }
-
         document.body.setAttribute('id', `scene${currentScene}`);
     }
 
@@ -105,17 +126,16 @@
                 });
                 break;
             case 1:
-                (scrollRatio <= startEndPoint("messageA_op"))
-                    ? objs.messageA.style.opacity = calcValues(values.messageA_op_in, currentYOffset)
-                    : objs.messageA.style.opacity = calcValues(values.messageA_op_out, currentYOffset);
-
-                for (let i = 0; i < 10; i++) {
-                    (scrollRatio <= 0.85)
-                        ? (
-                            objs[`icon${i}`].style.opacity = calcValues(values[`icon${i}_op`], currentYOffset),
-                            objs[`icon${i}`].style.transform = `translate3d(0, ${(calcValues(values[`icon${i}_op`], currentYOffset, values.icon_translateY))}%, 0)`
-                        )
-                        : objs[`icon${i}`].style.opacity = calcValues(values.icon_out, currentYOffset);
+                if (scrollRatio < 0.8) {
+                    objs.iconWrapper.style.height = "100%";
+                    objs.iconWrapper.classList.add('sticky');
+                    for (let i = 0; i < 10; i++) {
+                        objs[`icon${i}`].style.opacity = calcValues(values[`icon${i}_op`], currentYOffset);
+                        objs[`icon${i}`].style.transform = `translate3d(0, ${(calcValues(values[`icon${i}_op`], currentYOffset, values.icon_translateY))}%, 0)`;
+                    }
+                }else {
+                    objs.iconWrapper.style.height = `${window.innerHeight}px`;
+                    objs.iconWrapper.classList.remove('sticky');
                 }
                 break;
             case 2:
@@ -132,7 +152,7 @@
         scrollLoop();
     });
 
-    window.addEventListener('DOMContentLoaded', () => {
+    window.addEventListener('load', () => {
         setCurrentScene();
         clickEvent();
     });
