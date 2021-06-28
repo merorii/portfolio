@@ -15,9 +15,9 @@ a {
     cursor: none;
 }
 
-html {
+/* html {
     scroll-behavior: smooth;
-}
+} */
 
 .d-none {
     display: none;
